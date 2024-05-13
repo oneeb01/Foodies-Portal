@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Foodies Portal</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="logo">
+        <img src="images/logo1n.png" alt="MyOnlinemeal.com" />
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="restaurants.html">Restaurants</a></li>
+      
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <section id="home">
+      <div id="hometxt">
+        <h1 class="animated-heading">Welcome to Foodies Portal</h1>
+        <p>
+          Experience a revolutionary restaurant portal, where culinary diversity meets community engagement.
+        </p>
+        <p>
+          We aim to create a more sustainable future for the culinary industry.
+        </p>
+        <button class="orderbtn">Sign In</button>
+      </div>
+    </section>
+
+    <!-- sign in/ sign up form -->
+
+    <div class="main-form-container" id="main-form-container">
+      <!-- sign-up -->
+      <div class="arrow"></div>
+      <div class="form-container sign-up">
+        <form>
+          <h1>Create Account</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-google-plus-g"></i>
+            </a>
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i> </a>
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+          <span>or use your email for registration</span>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Sign up</button>
+        </form>
+      </div>
+
+      <!-- Sign In -->
+
+      <div class="form-container sign-in">
+        <form>
+          <h1>Sign In</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-google-plus-g"></i>
+            </a>
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i> </a>
+            <a href="#" class="icon"
+              ><i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+          <span>or use your email</span>
+
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forget your password</a>
+          <button>Sign in</button>
+        </form>
+      </div>
+
+      <div class="toggle-container">
+        <div class="arrow"></div>
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Welcome Back</h1>
+            <p>Enter Your Email password to get access</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+
+          <div class="toggle-panel toggle-right">
+            <h1>Hello Friends</h1>
+            <p>Register with your Email password to get access</p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="frest"><h1 class="animated-heading">Featured restaurants</h1></div>
+    <section id="cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/Arcadian-New-Logo-03.png" alt="" />
+          </div>
+          <div class="card-back" id="arcadian">
+            <p>
+              Hardee's Restaurants LLC is an American fast-food restaurant chain
+              operated by CKE Restaurants Holdings, Inc. with locations
+              primarily in the Southern and Midwestern United States. The
+              company has evolved through several corporate ownerships since its
+              establishment in 1960 in North Carolina. <br />
+              <a href="restaurants.html">Click to get more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/hardees-logo-1.png" alt="" />
+          </div>
+          <div class="card-back" id="hardees">
+            <p>
+              Hardee's Restaurants LLC is an American fast-food restaurant chain
+              operated by CKE Restaurants Holdings, Inc. with locations
+              primarily in the Southern and Midwestern United States. The
+              company has evolved through several corporate ownerships since its
+              establishment in 1960 in North Carolina. <br />
+              <a href="restaurants.html">Click to get more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/salt and pepper.png" alt="" />
+          </div>
+          <div class="card-back" id="saltandpepper">
+            <p>
+              salt and pepper Restaurants LLC is an American fast-food
+              restaurant chain operated by CKE Restaurants Holdings, Inc. with
+              locations primarily in the Southern and Midwestern United States.
+              The company has evolved through several corporate ownerships since
+              its establishment in 1960 in North Carolina. <br />
+              <a href="restaurants.html">Click to get more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Mission -->
+    <section class="vision-mission">
+      <div class="vm-heading"><h1 class="animated-heading">Our Vision And Mission</h1></div>
+      <div class="vm-container">
+        <div class="vm-img">
+          <img src="images/food3.jpg" alt="Your Image" />
+        </div>
+        <div class="vm-text">
+          <h2 class="animated-heading">Vision</h2>
+          <p>
+            Experience a revolutionary restaurant portal, where culinary
+            diversity meets community engagement. Explore a curated selection of
+            eateries, from hidden gems to Michelin-starred establishments.
+            Prioritize sustainability with eco-conscious dining options. Join a
+            thriving online community of food enthusiasts. Welcome to a digital
+            dining experience where every click unlocks a world of culinary
+            possibilities.
+          </p>
+
+          <h2 class="animated-heading">Mission</h2>
+          <p>
+            Our mission is to redefine the dining experience through innovation,
+            inclusivity, and sustainability. We aim to create a more sustainable
+            future for the culinary industry. Through our interactive platform,
+            we empower users to explore, learn, and engage in meaningful ways.
+            At the heart of our mission lies a commitment to enriching lives
+            through culinary discovery, community building, and positive social
+            impact.
+          </p>
+          <div class="vm-numbers">
+            <div class="number-container" id="section1">
+              <div class="number-display"><span id="number1">0</span>+</div>
+              <div class="caption">Restaurants</div>
+          </div>
+          <div class="number-container" id="section2">
+              <div class="number-display"><span id="number2">0</span>+</div>
+              <div class="caption">Users</div>
+          </div>
+          <div class="number-container" id="section3">
+              <div class="number-display"><span id="number3">0</span>+</div>
+              <div class="caption">Projects</div>
+          </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+<!-- Our Partners -->
+
+<section class="our-partners">
+  <div class="op-heading"><h1 class="animated-heading">Our Partners</h1></div>
+<div class="marquee">
+  <div class="marquee_group">
+    <a href="#"> <img src="images/foodpanda.png" alt=""></a>
+    <a href="#"> <img src="images/Unilever-Logo.wine.png" alt=""></a>
+    <a href="#"> <img src="images/Just_Eat-Logo.wine.png" alt=""></a>
+    <a href="#"> <img src="images/Cadbury-Logo.wine.png" alt=""></a>
+    <a href="#"> <img src="images/Nestlé-Logo.wine.png" alt=""></a>
+  
+  
+  </div>
+
+  <div aria-hidden="true" class="marquee_group">
+    <a href="#"> <img src="images/foodpanda.png" alt=""></a>
+    <a href="#"> <img src="images/Unilever-Logo.wine.png" alt=""></a>
+    <a href="#"> <img src="images/Just_Eat-Logo.wine.png" alt=""></a>
+    <a href="#"> <img src="images/Cadbury-Logo.wine.png" alt=""></a>
+    <a href="#"> <img src="images/Nestlé-Logo.wine.png" alt=""></a>
+  </div>
+</div>
+</section>
+
+
+<!-- Footer -->
+    
+
+<footer class="footer-background">
+  <div class="footer-columns">
+      <div class="column-1">
+          <ul>
+              <img src="images/logo1.png" alt="">
+              <p>Experience a revolutionary restaurant portal, where culinary diversity meets community engagement.</p>
+             
+              
+          </ul>
+      </div>
+      <div class="column-2">
+          <h4>Quick Links</h4>
+          <ul>
+              <li><a href="restaurants.html">Restaurant</a></li>
+              <li><a href="">Gallery</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+      </div>
+      <div class="column-3">
+          <h4>Featured Restaurants</h4>
+          <ul>
+            <li><a href="">Arkandian Caffe</a></li>
+            <li><a href="">Hardees</a></li>
+            <li><a href="">Salt and Pepper</a></li>
+          </ul>
+      </div>
+      <div class="column-4">
+          <h4>Our Newsletter</h4>
+          <div class="newsletter-signup">
+            <h4>Subscribe to our Newsletter</h4>
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div> 
+         
+        <div class="social-icons">
+          <a href="#" class="icon"
+            ><i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="icon"
+            ><i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class="icon"
+            ><i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+<script src="JS/form.js"></script>
+  </body>
+</html>

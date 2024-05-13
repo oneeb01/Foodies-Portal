@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtering Items</title>
+    <style>
+      .item {
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name or type..."
+      />
+      <select id="typeFilter">
+        <option value="">Filter by Type</option>
+        <option value="type1">Type 1</option>
+        <option value="type2">Type 2</option>
+      </select>
+      <select id="areaFilter">
+        <option value="">Filter by Area</option>
+        <option value="10">10 sqm</option>
+        <option value="20">20 sqm</option>
+        <option value="30">30 sqm</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+
+    <div id="itemList">
+      <div class="item" data-name="One" data-type="type1" data-area="10">
+        Item One (Type 1)
+        <h2>Column 1</h2>
+        <div class="restaurants">
+          <div class="card">
+            <div class="first-content">
+              <span>First</span>
+            </div>
+            <div class="second-content">
+              <span>Second</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-name="Two" data-type="type2" data-area="20">
+        Item Two (Type 2)
+      </div>
+      <div class="item" data-name="Three" data-type="type1" data-area="30">
+        Item Three (Type 1)
+      </div>
+      <div class="item" data-name="Four" data-type="type2" data-area="10">
+        Item Four (Type 2)
+      </div>
+      <div class="item" data-name="Five" data-type="type1" data-area="20">
+        Item Five (Type 1)
+      </div>
+    </div>
+
+    <!-- Load more testing -->
+
+    <div id="restaurant-list">
+      <!-- Your initial list of 6 restaurants here -->
+      <div class="restaurant">Restaurant 1</div>
+      <div class="restaurant">Restaurant 2</div>
+      <div class="restaurant">Restaurant 3</div>
+      <div class="restaurant">Restaurant 4</div>
+      <div class="restaurant">Restaurant 5</div>
+      <div class="restaurant">Restaurant 6</div>
+      <div class="restaurant">Restaurant 7</div>
+      <div class="restaurant">Restaurant 8</div>
+      <div class="restaurant">Restaurant 9</div>
+      <div class="restaurant">Restaurant 10</div>
+      <div class="restaurant">Restaurant 11</div>
+      <div class="restaurant">Restaurant 12</div>
+    </div>
+    <button id="load-more-btn">Load More</button>
+
+    <script src="script.js"></script>
+
+    <script>
+      // search bar script
+      function handleSearchAndFilter() {
+        const searchInput = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const typeFilter = document
+          .getElementById("typeFilter")
+          .value.toLowerCase();
+        const areaFilter = document.getElementById("areaFilter").value;
+
+        document.querySelectorAll(".item").forEach((item) => {
+          const name = item.dataset.name.toLowerCase();
+          const type = item.dataset.type.toLowerCase();
+          const area = item.dataset.area;
+
+          const nameMatch = name.includes(searchInput);
+          const typeMatch = type === typeFilter || !typeFilter;
+          const areaMatch = area === areaFilter || !areaFilter;
+
+          if (nameMatch && typeMatch && areaMatch) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", handleSearchAndFilter);
+      document
+        .getElementById("typeFilter")
+        .addEventListener("change", handleSearchAndFilter);
+      document
+        .getElementById("areaFilter")
+        .addEventListener("change", handleSearchAndFilter);
+
+      handleSearchAndFilter(); // Initial call to apply filters on page load
+
+      // Load more script testing
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const restaurantList = document.getElementById("restaurant-list");
+        const loadMoreButton = document.getElementById("load-more-btn");
+
+        const restaurants = restaurantList.querySelectorAll(".restaurant");
+        const initialItemCount = 6;
+        const increment = 3;
+
+        // Hide restaurants beyond the initial count
+        for (let i = initialItemCount; i < restaurants.length; i++) {
+          restaurants[i].style.display = "none";
+        }
+
+        loadMoreButton.addEventListener("click", function () {
+          const hiddenRestaurants = restaurantList.querySelectorAll(
+            '.restaurant[style*="display: none"]'
+          );
+          const totalCount = hiddenRestaurants.length;
+
+          for (let i = 0; i < increment && i < totalCount; i++) {
+            hiddenRestaurants[i].style.display = "block";
+          }
+
+          // If all restaurants are visible, hide the load more button
+          if (
+            restaurantList.querySelectorAll(
+              '.restaurant[style*="display: none"]'
+            ).length === 0
+          ) {
+            loadMoreButton.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
